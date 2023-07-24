@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q&A</title>
+  </head>
+  <body>
+    <h1>What is your favorite...</h1>
+    <h2>Football team?</h2>
+    <input onkeyup="displayInConsole(this.value)" />
+    <h2>Brand of shoes?</h2>
+    <input ondblclick="displayInConsole(this.value)" />
+    <h2>Flavor of icecream?</h2>
+    <label for="choco">Chocolate</label>
+    <input onclick="correct()" type="radio" id="choco" name="choco" />
+    <label for="vanilla">Vanilla</label>
+    <input onclick="incorrect()" type="radio" id="vanilla" name="vanilla" />
+    <h2>Button to press?</h2>
+    <button onclick="thisOne()">This one</button>
+
+    <script>
+      let pleaseWork;
+
+      function displayInConsole(input) {
+        pleaseWork = input;
+        console.log({ pleaseWork });
+      }
+
+      function correct() {
+        alert("That is correct! Chocolate is superior!");
+      }
+
+      function incorrect() {
+        alert("WRONG!!! Chocolate is THE BEST!");
+      }
+
+      function thisOne() {
+        let newElement = document.createElement("p");
+        let text = document.createTextNode(
+          "Really out of all buttons everywhere this is your favorite?"
+        );
+
+        newElement.appendChild(text);
+        document.body.appendChild(newElement);
+      }
+    </script>
+  </body>
+</html>
